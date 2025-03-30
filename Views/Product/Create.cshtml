@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Thêm Sản Phẩm";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Thêm Sản Phẩm Mới</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post">
+                <!-- Tên sản phẩm -->
+                <div class="form-group mb-3">
+                    <label for="Name" class="form-label">Tên Sản Phẩm</label>
+                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Nhập tên sản phẩm" required />
+                    <div class="invalid-feedback">Vui lòng nhập tên sản phẩm.</div>
+                </div>
+
+                <!-- Mô tả sản phẩm -->
+                <div class="form-group mb-3">
+                    <label for="Description" class="form-label">Mô Tả</label>
+                    <textarea class="form-control" id="Description" name="Description" placeholder="Nhập mô tả sản phẩm" rows="3" required></textarea>
+                    <div class="invalid-feedback">Vui lòng nhập mô tả sản phẩm.</div>
+                </div>
+
+                <!-- Giá sản phẩm -->
+                <div class="form-group mb-3">
+                    <label for="Price" class="form-label">Giá</label>
+                    <input type="number" class="form-control" id="Price" name="Price" placeholder="Nhập giá sản phẩm" required />
+                    <div class="invalid-feedback">Vui lòng nhập giá sản phẩm.</div>
+                </div>
+
+                <!-- Số lượng -->
+                <div class="form-group mb-3">
+                    <label for="Quantity" class="form-label">Số Lượng</label>
+                    <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Nhập số lượng sản phẩm" required />
+                    <div class="invalid-feedback">Vui lòng nhập số lượng sản phẩm.</div>
+                </div>
+
+                <!-- Nút lưu -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Lưu Sản Phẩm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS và validation script -->
+@section Scripts {
+    <script>
+        // Enable Bootstrap validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+}

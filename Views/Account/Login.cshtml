@@ -1,0 +1,144 @@
+﻿@model KhoHangMVC.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+
+<style>
+    /* Cải tiến giao diện toàn bộ trang đăng nhập */
+    .container {
+        max-width: 500px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h2.text-primary {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #007bff;
+    }
+
+    /* Form đẹp mắt với bóng đổ và các góc bo tròn */
+    form {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        background-color: #fff;
+    }
+
+    /* Các trường nhập liệu lớn và dễ sử dụng */
+    .form-control-lg {
+        padding: 12px 18px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    /* Các button đẹp mắt và dễ nhận diện */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    /* Link đăng ký có hiệu ứng hover */
+    .link-primary {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .link-primary:hover {
+            text-decoration: underline;
+        }
+
+    /* Thông báo lỗi rõ ràng */
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+        .alert-danger p {
+            margin-bottom: 0;
+        }
+
+    /* Tạo khoảng cách hợp lý giữa các phần tử */
+    .mb-0 {
+        margin-bottom: 0;
+    }
+
+    .mt-4 {
+        margin-top: 20px;
+    }
+
+    /* Cải tiến responsive bằng cách sử dụng Bootstrap's grid system */
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Giảm chiều rộng của form khi có màn hình nhỏ mà không cần media query */
+    .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .form-control-lg {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    /* Tối ưu hoá cho các kích thước màn hình nhỏ hơn */
+    .btn-primary {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        border-radius: 8px;
+        max-width: 100%;
+    }
+</style>
+
+<div class="container my-5">
+    <h2 class="text-center text-primary mb-4">Đăng Nhập</h2>
+
+    <form method="post" class="shadow-lg p-4 bg-white rounded">
+        <div class="form-group mb-3">
+            <label for="Username" class="form-label">Tên Đăng Nhập</label>
+            <input type="text" id="Username" name="Username" class="form-control form-control-lg" value="@Model?.Username" required placeholder="Nhập tên đăng nhập" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Password" class="form-label">Mật Khẩu</label>
+            <input type="password" id="Password" name="Password" class="form-control form-control-lg" required placeholder="Nhập mật khẩu" />
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-primary btn-lg px-4 py-2">Đăng Nhập</button>
+            <p class="mb-0">Chưa có tài khoản? <a href="@Url.Action("Register", "Account")" class="link-primary">Đăng ký</a></p>
+        </div>
+    </form>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger mt-4">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</div>

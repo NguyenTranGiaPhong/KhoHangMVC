@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Sửa Sản Phẩm";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Sửa Sản Phẩm</h2>
+
+    <form method="post" class="bg-light p-4 rounded shadow-sm">
+        <div class="form-group mb-3">
+            <label for="Name" class="font-weight-bold">Tên Sản Phẩm</label>
+            <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Description" class="font-weight-bold">Mô Tả</label>
+            <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" required />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Price" class="font-weight-bold">Giá</label>
+            <input type="number" class="form-control" id="Price" name="Price" value="@Model.Price" required />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Quantity" class="font-weight-bold">Số Lượng</label>
+            <input type="number" class="form-control" id="Quantity" name="Quantity" value="@Model.Quantity" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 py-2 mt-3">Cập Nhật</button>
+    </form>
+</div>
+
+<style>
+    .container {
+        max-width: 600px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+    .form-control {
+        border-radius: 10px;
+        box-shadow: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+
+    h2 {
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+
+    label {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+</style>

@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Đơn Hàng";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-5" style="color: #007bff; font-weight: bold;">Danh Sách Đơn Hàng</h2>
+
+    <!-- Nút thêm đơn hàng -->
+    <p class="text-right mb-4">
+        <a href="@Url.Action("Create", "Order")" class="btn btn-success btn-lg rounded-pill px-4 py-2">Thêm Đơn Hàng Mới</a>
+    </p>
+
+    <!-- Bảng danh sách đơn hàng -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-lg rounded">
+            <thead class="thead-light" style="background-color: #f8f9fa;">
+                <tr>
+                    <th class="text-center">Số thứ tự</th>
+                    <th class="text-center">Tên Khách Hàng</th>
+                    <th class="text-center">Ngày Đặt</th>
+                    <th class="text-center">Tổng Tiền</th>
+                    <th class="text-center">Tình Trạng</th>
+                    <th class="text-center">Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr class="align-middle">
+                        <td class="text-center">@order.Id</td>
+                        <td>@order.CustomerName</td>
+                        <td class="text-center">@order.OrderDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-center">@order.TotalAmount.ToString("C")</td>
+                        <td>@order.Status</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit", "Order", new { id = order.Id })" class="btn btn-warning btn-sm rounded-pill px-3 py-1 mr-2">
+                                <i class="fas fa-edit"></i> Sửa
+                            </a>
+                            <a href="@Url.Action("Delete", "Order", new { id = order.Id })" class="btn btn-danger btn-sm rounded-pill px-3 py-1" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')">
+                                <i class="fas fa-trash-alt"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Include FontAwesome icons for buttons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+}

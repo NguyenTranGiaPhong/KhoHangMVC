@@ -1,0 +1,212 @@
+﻿/* Font toàn trang */
+html {
+    font-size: 14px; /* Mặc định là 14px */
+    font-family: 'Arial', sans-serif; /* Chọn font đẹp */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px; /* Thay đổi kích thước font trên các màn hình rộng */
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Chọn font dễ đọc */
+    background-color: #f8f9fa; /* Màu nền sáng */
+    margin-bottom: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Font tiêu đề đẹp */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Tạo khoảng cách giữa các thẻ tiêu đề */
+h1, h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6; /* Tăng độ sáng cho văn bản */
+    color: #555; /* Màu chữ tối vừa phải */
+}
+
+a {
+    color: #258cfb; /* Màu xanh dương cho các liên kết */
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+
+/* Cải thiện các nút */
+.btn {
+    font-size: 1rem; /* Tăng kích thước chữ */
+    font-weight: 600; /* Chữ đậm cho nút */
+    padding: 10px 20px;
+    border-radius: 0.375rem; /* Viền tròn cho nút */
+    transition: background-color 0.3s, transform 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+    .btn:hover {
+        background-color: #258cfb; /* Màu nền của nút khi hover */
+        color: white; /* Đổi màu chữ khi hover */
+        transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+    }
+
+.btn-outline-primary {
+    border-color: #258cfb;
+    color: #258cfb;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #258cfb;
+        color: white;
+    }
+
+/* Cải thiện trường nhập liệu (form controls) */
+.form-control {
+    border-radius: 0.375rem; /* Viền tròn */
+    box-shadow: none; /* Bỏ bóng đổ mặc định */
+    padding: 10px; /* Thêm padding */
+    background-color: #fff; /* Màu nền trắng */
+    border: 1px solid #ced4da; /* Màu đường viền nhạt */
+}
+
+    .form-control:focus {
+        border-color: #258cfb; /* Màu đường viền khi focus */
+        box-shadow: 0 0 0 0.2rem rgba(37, 140, 251, 0.25); /* Hiệu ứng focus */
+    }
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: #6c757d; /* Màu chữ nhạt cho placeholder */
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Thêm khoảng cách giữa các trường nhập liệu */
+}
+
+/* Tạo giao diện đẹp cho Navbar */
+.navbar {
+    background-color: #fff; /* Màu nền sáng cho navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho navbar */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px; /* Khoảng cách giữa các mục menu */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600; /* Chữ đậm */
+    color: #333; /* Màu chữ tối cho các liên kết */
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #258cfb; /* Màu chữ khi hover */
+    }
+
+.navbar-brand {
+    font-weight: 700; /* Chữ đậm cho logo */
+    font-size: 1.5rem; /* Kích thước chữ lớn cho logo */
+}
+
+.navbar-toggler-icon {
+    background-color: #258cfb; /* Màu icon cho navbar khi thu nhỏ */
+}
+
+/* Cải thiện footer */
+footer {
+    background-color: #343a40; /* Nền footer màu xám tối */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+    footer a {
+        color: #258cfb; /* Màu xanh dương cho liên kết trong footer */
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    footer .container {
+        max-width: 100%; /* Đảm bảo footer luôn đầy rộng */
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Căn giữa các liên kết trong menu */
+    }
+
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .btn {
+        width: 100%; /* Nút full width trên các thiết bị di động */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem; /* Giảm kích thước logo trên màn hình nhỏ */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 10px; /* Giảm khoảng cách giữa các mục menu */
+    }
+}
+
+/* Hiệu ứng hover cho các liên kết */
+a:hover {
+    color: #258cfb;
+    text-decoration: underline;
+}
+
+.container {
+    padding-top: 30px; /* Thêm khoảng cách từ trên cho toàn bộ trang */
+}
+
+/* Cải thiện hiệu ứng focus cho các nút, form */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Mở rộng trang đầy đủ */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Placeholder cho các trường nhập liệu */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}

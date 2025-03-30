@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Kho Hàng";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-5" style="color: #007bff; font-weight: bold;">Danh Sách Sản Phẩm trong Kho</h2>
+
+    <!-- Nút thêm sản phẩm -->
+    <p class="text-right mb-4">
+        <a href="@Url.Action("Create", "Stock")" class="btn btn-success btn-lg rounded-pill px-4 py-2">Thêm Sản Phẩm Mới</a>
+    </p>
+
+    <!-- Bảng danh sách sản phẩm -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-lg rounded">
+            <thead class="thead-light" style="background-color: #f8f9fa;">
+                <tr>
+                    <th class="text-center">Số thứ tự</th>
+                    <th class="text-center">Tên Sản Phẩm</th>
+                    <th class="text-center">Số Lượng</th>
+                    <th class="text-center">Giá</th>
+                    <th class="text-center">Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stock in Model)
+                {
+                    <tr class="align-middle">
+                        <td class="text-center">@stock.Id</td>
+                        <td>@stock.ProductName</td>
+                        <td class="text-center">@stock.Quantity</td>
+                        <td class="text-center">@stock.Price.ToString("C")</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit", "Stock", new { id = stock.Id })" class="btn btn-warning btn-sm rounded-pill px-3 py-1 mr-2">
+                                <i class="fas fa-edit"></i> Sửa
+                            </a>
+                            <a href="@Url.Action("Delete", "Stock", new { id = stock.Id })" class="btn btn-danger btn-sm rounded-pill px-3 py-1" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                                <i class="fas fa-trash-alt"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Include FontAwesome icons for buttons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+}

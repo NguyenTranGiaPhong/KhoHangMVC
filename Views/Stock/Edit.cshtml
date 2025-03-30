@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Sửa Sản Phẩm";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #007bff; font-weight: bold;">Sửa Sản Phẩm</h2>
+
+    <form method="post" class="shadow-lg p-4 bg-white rounded">
+        <!-- Tên sản phẩm -->
+        <div class="form-group mb-3">
+            <label for="ProductName" class="form-label">Tên Sản Phẩm</label>
+            <input type="text" class="form-control form-control-lg" id="ProductName" name="ProductName" value="@Model.ProductName" required placeholder="Nhập tên sản phẩm" />
+        </div>
+
+        <!-- Số lượng sản phẩm -->
+        <div class="form-group mb-3">
+            <label for="Quantity" class="form-label">Số Lượng</label>
+            <input type="number" class="form-control form-control-lg" id="Quantity" name="Quantity" value="@Model.Quantity" required placeholder="Nhập số lượng sản phẩm" />
+        </div>
+
+        <!-- Giá sản phẩm -->
+        <div class="form-group mb-3">
+            <label for="Price" class="form-label">Giá</label>
+            <input type="number" class="form-control form-control-lg" id="Price" name="Price" value="@Model.Price" required placeholder="Nhập giá sản phẩm" />
+        </div>
+
+        <!-- Nút hành động -->
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-primary px-4 py-2 btn-lg rounded-pill">Cập Nhật</button>
+            <a href="@Url.Action("Index", "Product")" class="btn btn-secondary px-4 py-2 btn-lg rounded-pill">Quay lại</a>
+        </div>
+    </form>
+</div>
+
+<!-- Optional: Include FontAwesome icons for styling -->
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+}
